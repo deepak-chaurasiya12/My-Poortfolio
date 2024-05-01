@@ -23,7 +23,7 @@ const Form = () => {
     
     try {
       // Send form data to backend
-      await axios.post('/api/saveFormData', formData);
+      await axios.post('https://my-poortfolio-nine.vercel.app/api/saveFormData', formData);
 ; // changed the URL to relative path
       // Optionally, you can clear the form fields after saving
       setFormData({
