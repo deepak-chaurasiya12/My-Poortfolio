@@ -23,7 +23,7 @@ const Form = () => {
     
     try {
       // Send form data to backend
-      await axios.post('http://localhost:5000/api/saveFormData', formData);
+      await axios.post('/api/saveFormData', formData);
 ; // changed the URL to relative path
       // Optionally, you can clear the form fields after saving
       setFormData({
