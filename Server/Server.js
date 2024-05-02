@@ -7,7 +7,6 @@ const app = express();
 const PORT = process.env.PORT || 5000; // Choose your desired port
 
 // Middleware
-// Middleware
 app.use(cors({
   origin: 'https://my-poortfolio-frontend.vercel.app' // Allow requests from this origin
 }));
