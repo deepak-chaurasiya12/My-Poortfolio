@@ -52,6 +52,12 @@ p{
     font-size: 1.2rem;
 }
 
+.reserved {
+    text-align: center;
+    margin-top: 2rem; /* Adjust margin as needed */
+    grid-column: 1 / -1; /* Span across all columns */
+    align-self: end; /* Align to the bottom */
+}
 
 .reserved p {
     text-align: center;
