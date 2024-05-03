@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000; // Choose your desired port
 app.use(cors({
   origin: 'https://my-poortfolio-frontend.vercel.app' // Allow requests from this origin
 }));
-app.use(bodyParser.json());
+app.use(express.json()); // Middleware for parsing JSON bodies
 
 // Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://dchaurasiya277:pLuHOW7HVT66whqE@cluster0.esogdi2.mongodb.net/test', {
