@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Asset/Form.css';
 import axios from 'axios';
 
+axios.defaults.baseURL = 'https://my-poortfolio-nine.vercel.app/'
+
 const Form = () => {
   const [formData, setFormData] = useState({
     name: '',
