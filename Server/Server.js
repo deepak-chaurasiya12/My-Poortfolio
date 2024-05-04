@@ -39,6 +39,7 @@ app.post('/api/saveFormData', (req, res) => {
   const formData = new FormData(req.body);
   formData.save()
     .then(() => {
+      res.setHeader('Access-Control-Allow-Origin', 'https://my-poortfolio-frontend.vercel.app');
       res.status(200).json({ message: 'Form data saved successfully' });
     })
     .catch(err => {
@@ -46,6 +47,7 @@ app.post('/api/saveFormData', (req, res) => {
       res.status(500).json({ error: 'Error saving form data. Please try again later.' });
     });
 });
+
 
 // Start the server
 app.listen(PORT, () => {
