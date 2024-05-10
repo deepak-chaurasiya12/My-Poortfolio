@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 5000; // Choose your desired port
 
 // Middleware
-app.use(cors()); // Allow requests from all origins
+// app.use(cors()); // Allow requests from all origins
 app.use(express.json()); // Middleware for parsing JSON bodies
 
 // Connect to MongoDB Atlas
