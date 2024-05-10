@@ -35,6 +35,8 @@ app.get('/', (req, res) => {
   res.send('Server is running');
 });
 
+app.options('/api/saveFormData', cors()); // Enable pre-flight request for the specific route
+
 app.post('/api/saveFormData', (req, res) => {
   const formData = new FormData(req.body);
   formData.save()
