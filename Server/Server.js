@@ -1,13 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT || 5000; // Choose your desired port
 
 // Middleware
-// app.use(cors()); // Allow requests from all origins
 app.use(express.json()); // Middleware for parsing JSON bodies
 
 // Connect to MongoDB Atlas
@@ -33,19 +31,27 @@ app.get('/', (req, res) => {
   res.send('Server is running');
 });
 
-// Enable pre-flight request for all routes
-app.options('*', cors());
+// Route handler for saving form data
+app.options('/api/saveFormData', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://my-poortfolio-frontend.vercel.app');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.status(200).end();
+});
 
-app.post('/api/saveFormData', cors(), (req, res) => {
-  const formData = new FormData(req.body);
-  formData.save()
-    .then(() => {
-      res.status(200).json({ message: 'Form data saved successfully' });
-    })
-    .catch(err => {
-      console.error('Error saving form data:', err);
-      res.status(500).json({ error: 'Error saving form data. Please try again later.' });
-    });
+app.post('/api/saveFormData', async (req, res) => {
+  try {
+    res.setHeader('Access-Control-Allow-Origin', 'https://my-poortfolio-frontend.vercel.app');
+    res.setHeader('Access-Control-Allow-Methods', 'POST');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    const formData = new FormData(req.body);
+    await formData.save();
+    res.status(200).json({ message: 'Form data saved successfully' });
+  } catch (err) {
+    console.error('Error saving form data:', err);
+    res.status(500).json({ error: 'Error saving form data. Please try again later.' });
+  }
 });
 
 // Start the server
