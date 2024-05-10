@@ -7,9 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 5000; // Choose your desired port
 
 // Middleware
-app.use(cors({
-  origin: 'https://my-poortfolio-frontend.vercel.app' // Allow requests from this origin
-}));
+app.use(cors()); // Allow requests from all origins
 app.use(express.json()); // Middleware for parsing JSON bodies
 
 // Connect to MongoDB Atlas
@@ -35,13 +33,13 @@ app.get('/', (req, res) => {
   res.send('Server is running');
 });
 
-app.options('/api/saveFormData', cors()); // Enable pre-flight request for the specific route
+// Enable pre-flight request for all routes
+app.options('*', cors());
 
-app.post('/api/saveFormData', (req, res) => {
+app.post('/api/saveFormData', cors(), (req, res) => {
   const formData = new FormData(req.body);
   formData.save()
     .then(() => {
-      res.setHeader('Access-Control-Allow-Origin', 'https://my-poortfolio-frontend.vercel.app');
       res.status(200).json({ message: 'Form data saved successfully' });
     })
     .catch(err => {
@@ -49,7 +47,6 @@ app.post('/api/saveFormData', (req, res) => {
       res.status(500).json({ error: 'Error saving form data. Please try again later.' });
     });
 });
-
 
 // Start the server
 app.listen(PORT, () => {
