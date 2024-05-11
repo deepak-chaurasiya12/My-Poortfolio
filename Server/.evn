@@ -1,2 +1,2 @@
-MONGODB_URL=mongodb+srv://dchaurasiya277:pLuHOW7HVT66whqE@cluster0.esogdi2.mongodb.net/
+MONGODB_URL=mongodb+srv://dchaurasiya277:pLuHOW7HVT66whqE@cluster0.esogdi2.mongodb.net/test
 PORT=5000
