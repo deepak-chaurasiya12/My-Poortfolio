@@ -1,12 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import the cors middleware
 
 const app = express();
 const PORT = process.env.PORT || 5000; // Choose your desired port
 
 // Middleware
 app.use(express.json()); // Middleware for parsing JSON bodies
+app.use(cors()); // Enable CORS for all routes
 
 // Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://dchaurasiya277:pLuHOW7HVT66whqE@cluster0.esogdi2.mongodb.net/test', {
@@ -32,19 +34,8 @@ app.get('/', (req, res) => {
 });
 
 // Route handler for saving form data
-app.options('/api/saveFormData', (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://my-poortfolio-frontend.vercel.app');
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.status(200).end();
-});
-
 app.post('/api/saveFormData', async (req, res) => {
   try {
-    res.setHeader('Access-Control-Allow-Origin', 'https://my-poortfolio-frontend.vercel.app');
-    res.setHeader('Access-Control-Allow-Methods', 'POST');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
     const formData = new FormData(req.body);
     await formData.save();
     res.status(200).json({ message: 'Form data saved successfully' });
