@@ -19,6 +19,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+// Handle preflight requests
+app.options('*', cors(corsOptions));
+
+
 // Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://dchaurasiya277:pLuHOW7HVT66whqE@cluster0.esogdi2.mongodb.net/test', {
     useNewUrlParser: true,
