@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -10,7 +10,7 @@ app.use(express.json());
 
 // CORS Configuration
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://my-poortfolio-frontend.vercel.app'], // Add other allowed origins if needed
+  origin: ['http://localhost:3000', 'https://my-poortfolio-frontend.vercel.app'],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
@@ -30,8 +30,12 @@ mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error('MongoDB connection error:', err));
+.then(() => {
+  console.log('MongoDB connected');
+})
+.catch(err => {
+  console.error('MongoDB connection error:', err);
+});
 
 // Define a Mongoose schema for your form data
 const formDataSchema = new mongoose.Schema({
@@ -53,8 +57,10 @@ app.post('/api/saveFormData', async (req, res) => {
   console.log('Received form data:', req.body);
 
   try {
+    console.time('SaveFormData');
     const formData = new FormData(req.body);
     await formData.save();
+    console.timeEnd('SaveFormData');
     console.log('Form data saved successfully');
     res.status(200).json({ message: 'Form data saved successfully' });
   } catch (err) {
