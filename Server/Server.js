@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(); // Load environment variables from .env file
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -10,7 +10,7 @@ app.use(express.json());
 
 // CORS Configuration
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://my-poortfolio-frontend.vercel.app/contact'], // Add other allowed origins if needed
+  origin: ['http://localhost:3000', 'https://my-poortfolio-frontend.vercel.app'], // Add other allowed origins if needed
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
@@ -21,8 +21,12 @@ app.use(cors(corsOptions));
 // Handle preflight requests
 app.options('*', cors(corsOptions));
 
+// Debugging: Check if environment variables are loaded correctly
+console.log('MongoDB URL:', process.env.MONGODB_URL);
+console.log('PORT:', process.env.PORT);
+
 // Connect to MongoDB Atlas using the environment variable
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
