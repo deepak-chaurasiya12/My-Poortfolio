@@ -21,26 +21,24 @@ const Form = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    try {
-      // Send form data to backend
-      await axios.post('/api/saveFormData', formData);
-; // changed the URL to relative path
-      // Optionally, you can clear the form fields after saving
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      alert('Form data submitted successfully');
-    } catch (error) {
-      console.error('Error saving form data:', error);
-      console.log('Error response:', error.response); // Log the error response
-      alert('Error saving form data. Please try again later.');
-    }
-  };
+  e.preventDefault();
+  
+  try {
+    // Use your deployed backend URL
+    await axios.post('https://my-poortfolio-nine.vercel.app/api/saveFormData', formData);
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+    alert('Form data submitted successfully');
+  } catch (error) {
+    console.error('Error saving form data:', error);
+    console.log('Error response:', error.response);
+    alert('Error saving form data. Please try again later.');
+  }
+};
 
   return (
     <div className='form'>
