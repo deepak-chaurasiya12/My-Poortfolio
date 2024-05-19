@@ -6,7 +6,7 @@
       }
     ],
     "functions": {
-      "api/*.js": {
+      "api/saveFormData.js": {
         "maxDuration": 10
       }
     }
