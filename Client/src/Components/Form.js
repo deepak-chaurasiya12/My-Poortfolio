@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './Asset/Form.css';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://my-poortfolio-nine.vercel.app/'
-
 const Form = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -25,7 +23,7 @@ const Form = () => {
     
     try {
       // Send form data to backend
-      await axios.post('/api/saveFormData', formData);
+      await axios.post('https://my-poortfolio-livid.vercel.app/api/saveFormData', formData);
 ; // changed the URL to relative path
       // Optionally, you can clear the form fields after saving
       setFormData({
