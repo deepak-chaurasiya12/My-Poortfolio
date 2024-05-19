@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import './Asset/Form.css';
 import axios from 'axios';
 
+<<<<<<< HEAD
+=======
+axios.defaults.baseURL = 'https://my-poortfolio-seven.vercel.app/'
+
+>>>>>>> 6027039bc308e8ba17e51363cca62c77c1000059
 const Form = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -19,6 +24,7 @@ const Form = () => {
   };
 
   const handleSubmit = async (e) => {
+<<<<<<< HEAD
     e.preventDefault();
     
     try {
@@ -39,6 +45,26 @@ const Form = () => {
       alert('Error saving form data. Please try again later.');
     }
   };
+=======
+  e.preventDefault();
+  
+  try {
+    // Use your deployed backend URL
+    await axios.post('https://my-poortfolio-seven.vercel.app//api/saveFormData', formData);
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+    alert('Form data submitted successfully');
+  } catch (error) {
+    console.error('Error saving form data:', error);
+    console.log('Error response:', error.response);
+    alert('Error saving form data. Please try again later.');
+  }
+};
+>>>>>>> 6027039bc308e8ba17e51363cca62c77c1000059
 
   return (
     <div className='form'>

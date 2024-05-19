@@ -1,14 +1,25 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const cors = require('cors'); // Import the cors middleware
+const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 5000; // Choose your desired port
+const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(express.json()); // Middleware for parsing JSON bodies
-app.use(cors()); // Enable CORS for all routes
+app.use(express.json());
+
+// CORS Configuration
+const corsOptions = {
+  origin: 'https://my-poortfolio-frontend.vercel.app', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options('*', cors(corsOptions));
 
 // Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://dchaurasiya277:pLuHOW7HVT66whqE@cluster0.esogdi2.mongodb.net/test', {
