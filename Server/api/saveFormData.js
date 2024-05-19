@@ -4,9 +4,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-// Middleware
-app.use(express.json());
-
 // CORS Configuration
 const corsOptions = {
   origin: ['http://localhost:3000', 'https://my-poortfolio-frontend.vercel.app'],
@@ -16,9 +13,10 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Preflight requests
 
-// Handle preflight requests
-app.options('*', cors(corsOptions));
+// Middleware
+app.use(express.json());
 
 // Debugging: Check if environment variables are loaded correctly
 console.log('MongoDB URL:', process.env.MONGODB_URL);
