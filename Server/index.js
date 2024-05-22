@@ -15,10 +15,17 @@ connectDB()
     process.exit(1);
   });
 
+// CORS configuration
+const corsOptions = {
+  origin: 'https://my-poortfolio-frontend.vercel.app', // Your frontend domain
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
 // Middleware
-app.use(cors());
 app.use(bodyParser.json());
 
+// Root route
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
