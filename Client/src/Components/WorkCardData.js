@@ -99,7 +99,7 @@ const ProjectCradData=[
         imgsrc:pro10,
         title:"E-notes",
         text:"Created a E-notes webpage where a user can save their own notes with different color notes tag, as my own project using React node.js.",
-        view:"https://frontend-deploy-nu.vercel.app/login",
+        view:"https://deepak-chaurasiya12.github.io/Weather-app/",
         github:"https://github.com/deepak-chaurasiya12/Frontend"
 
     }
