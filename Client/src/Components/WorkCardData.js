@@ -7,6 +7,7 @@ import pro6 from '../Components/Asset/Images/cal.jpg'
 import pro7 from '../Components/Asset/Images/count-down.jpg'
 import pro8 from '../Components/Asset/Images/News-world.jpg'
 import pro9 from '../Components/Asset/Images/eNotes.png'
+import pro10 from '../Components/Asset/Images/Screenshot 2024-09-17 213329.png'
 
 
 
@@ -92,7 +93,17 @@ const ProjectCradData=[
         view:"https://frontend-deploy-nu.vercel.app/login",
         github:"https://github.com/deepak-chaurasiya12/Frontend"
 
+    },
+
+    {
+        imgsrc:pro10,
+        title:"E-notes",
+        text:"Created a E-notes webpage where a user can save their own notes with different color notes tag, as my own project using React node.js.",
+        view:"https://frontend-deploy-nu.vercel.app/login",
+        github:"https://github.com/deepak-chaurasiya12/Frontend"
+
     }
+
 
     
 
