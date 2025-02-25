@@ -29,8 +29,7 @@ const Footer = () => {
 
                 <div className='right-content'>
                     <h4>About Me as a Web Developer</h4>
-                    <p>As a Web developer, I have created the websites in which some of as a course work/project or my own personal projects.
-                        In future, I am looking for a good company to join as a web developer.
+                    <p>As a Web developer, I have created the websites in which some of as a course work/project or my own personal projects. In future, I am looking for a good company to join as a web developer.
                     </p>
                     <div className='social'>
                         <a href='https://www.facebook.com/profile.php?id=100008806204675'> 
