@@ -8,7 +8,7 @@ const Contect = () => {
   return (
     <div>
       <Navbar/>
-      <Heroimg2 heading="CONTACT ME" text="Write to us for any queries and concerns."/>
+      <Heroimg2 heading="CONTACT ME" text="For any questions or concerns, please feel free to reach out to us."/>
       <Form/>
       <Footer/>
     </div>

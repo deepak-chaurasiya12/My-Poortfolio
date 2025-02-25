@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaHome, FaPhone, FaMailBulk, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"
+import { FaHome, FaMailBulk, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"
 import "../Components/Asset/Footer.css"
 
 const Footer = () => {
@@ -15,11 +15,6 @@ const Footer = () => {
                             <p>Haryana</p>
                         </div>
                     </div>
-                    <div className='phone'>
-                        <h4><FaPhone size={20} style={{ color: "#fff", marginRight: "2rem" }} />
-                            8787085500
-                        </h4>
-                    </div>
 
                     <div className='email'>
                         <p><FaMailBulk size={20} style={{ color: "#fff", marginRight: "2rem" }} />
@@ -28,7 +23,7 @@ const Footer = () => {
                 </div>
 
                 <div className='right-content'>
-                    <h4>About Me as a Web Developer</h4>
+                    <h4>About Me</h4>
                     <p>As a web developer, I have designed and developed websites through coursework, projects, and personal initiatives. I am eager to apply my skills in a professional setting and aspire to join a reputable company as a web developer in the future.
                     </p>
                     <div className='social'>
