@@ -7,7 +7,7 @@ const AboutContent = () => {
     <div className='about'>
         <div className='left'>
             <h1>Who am I?</h1>
-            <p>I am react web developer. I create responsive secure websites for my clients.</p>
+            <p>I am a React web developer specializing in creating responsive, secure, and high-performance websites tailored to my clients' needs. I leverage AI-driven design techniques to enhance user experience and make web pages more visually appealing. With a focus on modern aesthetics, functionality, and security, I ensure that every project meets the highest industry standards.</p>
             <Link to="/contact">
                 <button className='btn'>Contact</button>
             </Link>
