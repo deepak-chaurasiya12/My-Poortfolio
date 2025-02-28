@@ -17,7 +17,7 @@ const Heroimg = () => {
                 <Link to='/contact' className='btn btn-light'>Contact</Link>
 
                 {/* Open CV in a new tab */}
-                <a href="/Assets/Deepak_CV.pdf" target="_blank" rel="noopener noreferrer" className='btn btn-cv'>
+                <a href="/Deepak_CV.pdf" target="_blank" rel="noopener noreferrer" className='btn btn-cv'>
                   View CV
                 </a>
             </div>
