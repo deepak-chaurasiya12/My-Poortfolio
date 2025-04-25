@@ -14,7 +14,7 @@ const Heroimg = () => {
         <div className='content'>
           {/* Profile picture */}
           <img src={ProfilePic} alt="Deepak Profile" className="profile-img" />
-            <p>Hi, I am Deepak</p>
+            <p>Deepak Chaurasiya</p>
 
             <div>
                 <Link to="/project" className='btn'>Projects</Link>
